@@ -9,6 +9,7 @@ services:
       - DATACLAY_KV_HOST=redis
     volumes:
       - ./model:/usr/src/model:ro
+      - ./dataset:/usr/src/dataset:rw
     command: python -m dataclay.backend
 
   redis:
