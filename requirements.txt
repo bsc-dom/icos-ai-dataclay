@@ -1,0 +1,13 @@
+git+https://github.com/bsc-dom/dataclay@icos-ml
+
+# Only for fancy notebook
+jupyter
+
+# Taken from https://github.com/pytorch/examples/blob/main/vision_transformer/requirements.txt
+numpy==1.24.2
+torch==2.0.0
+torchvision==0.15.1
+
+# I have no idea, but somebody says that it solves an error:
+# https://github.com/pytorch/examples/issues/1148
+tqdm

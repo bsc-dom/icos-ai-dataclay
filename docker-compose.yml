@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  dataclay-backend:
+    build: .
+    depends_on:
+      - redis
+    environment:
+      - DATACLAY_KV_HOST=redis
+    volumes:
+      - ./model:/usr/src/model:ro
+    command: python -m dataclay.backend
+
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+
+  dataclay-mds:
+    build: .
+    depends_on:
+      - redis
+    ports:
+      - 16587:16587
+    environment:
+      - DATACLAY_KV_HOST=redis
+      - DATACLAY_PASSWORD=s3cret
+      - DATACLAY_USERNAME=testuser
+      - DATACLAY_DATASET=testdata
+    command: python -m dataclay.metadata
