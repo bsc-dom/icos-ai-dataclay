@@ -29,3 +29,11 @@ services:
       - DATACLAY_USERNAME=testuser
       - DATACLAY_DATASET=testdata
     command: python -m dataclay.metadata
+
+  jupyter-notebook:
+    build:
+      dockerfile: jupyter.Dockerfile
+    ports:
+      - "8888"
+    volumes:
+      - ./:/home/jovyan/work
