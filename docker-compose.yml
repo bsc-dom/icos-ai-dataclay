@@ -7,9 +7,12 @@ services:
       - redis
     environment:
       - DATACLAY_KV_HOST=redis
+      - DATACLAY_BACKEND_HOST=127.0.0.1
     volumes:
       - ./model:/usr/src/model:ro
       - ./dataset:/usr/src/dataset:rw
+    ports:
+      - 6867:6867
     command: python -m dataclay.backend
 
   redis:
@@ -30,10 +33,3 @@ services:
       - DATACLAY_DATASET=testdata
     command: python -m dataclay.metadata
 
-  jupyter-notebook:
-    build:
-      dockerfile: jupyter.Dockerfile
-    ports:
-      - "8888"
-    volumes:
-      - ./:/home/jovyan/work
