@@ -8,6 +8,7 @@ services:
     environment:
       - DATACLAY_KV_HOST=redis
       - DATACLAY_BACKEND_HOST=127.0.0.1
+      - DATACLAY_BACKEND_ID=9662bd3e-0844-4688-bba5-29cac7d83531
     volumes:
       - ./model:/usr/src/model:ro
       - ./dataset:/usr/src/dataset:rw
