@@ -11,3 +11,7 @@ torchvision==0.15.1
 # I have no idea, but somebody says that it solves an error:
 # https://github.com/pytorch/examples/issues/1148
 tqdm
+
+# Stuff for DataFrame tests
+pandas
+seaborn
