@@ -1,4 +1,5 @@
-dataset/
+dataset/*
+!dataset/.placeholder
 venv/
 .ipynb_checkpoints
 best-weights.pt
